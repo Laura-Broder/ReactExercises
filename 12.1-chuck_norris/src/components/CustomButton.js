@@ -4,26 +4,26 @@ class CustomButton extends React.Component {
   state = {
     btnType: this.props.type,
     btnValue: this.props.value,
-    btnColor: this.props.buttonColor,
+    btnContent: this.props.content,
   };
   handleBtnClick = (e) => {
-    const color = e.target.value;
-    this.props.onClick(color);
+    const category = e.target.value;
+    this.props.onClick(category);
   };
   style = {
-    background: this.state.btnColor,
+    // background: this.state.btnColor,
   };
   render() {
     return (
-      <div>
+      <>
         <button
           type={this.state.btnType}
           value={this.state.btnValue}
-          style={this.style}
+          // style={this.style}
           onClick={this.handleBtnClick}>
-          {this.state.btnValue}
+          {this.state.btnContent}
         </button>
-      </div>
+      </>
     );
   }
 }
