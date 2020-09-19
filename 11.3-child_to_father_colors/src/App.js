@@ -10,15 +10,18 @@ class App extends React.Component {
   };
   creatButtons = (colors) => {
     let buttonsElementsArray = [];
+    let index = 0;
     for (let color of colors) {
       buttonsElementsArray.push(
         <CustomButton
+          key={index}
           type="button"
           value={color}
           buttonColor={color}
           onClick={this.handleClick}
         />,
       );
+      index++;
     }
     return buttonsElementsArray;
   };
